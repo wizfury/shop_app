@@ -25,16 +25,15 @@ class Item {
   }
 
   toMap() => {
-    "id": id,
-    "name": name,
-    "desc":desc,
-    "price":price,
-    "color":color,
-    "image":image
-    
-  };
+        "id": id,
+        "name": name,
+        "desc": desc,
+        "price": price,
+        "color": color,
+        "image": image
+      };
 }
 
 class catalogModel {
-  static List<Item> items;
+  static List<Item> items=[];
 }
