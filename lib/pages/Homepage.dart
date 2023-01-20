@@ -2,6 +2,7 @@ import 'dart:html';
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
 import 'dart:convert';
@@ -45,13 +46,28 @@ class _HomepageState extends State<Homepage> {
       body: Padding(
           padding: EdgeInsets.all(20),
           child: (catalogModel.items != null && catalogModel.items.isNotEmpty)
-              ? ListView.builder(
+              ? GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 2,
+                      mainAxisSpacing: 20,
+                      crossAxisSpacing: 20, 
+                      ),
+                  itemBuilder: ((context, index) {
+                    final item = catalogModel.items[index];
+                    return Card(
+                        clipBehavior: Clip.antiAlias,
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)),
+                        child: GridTile(
+                          header: Container(
+                            padding: const EdgeInsets.all(10),
+                            decoration: BoxDecoration(),
+                            child: Text(item.name)),
+                          child: Image.network(item.image),
+                          footer: Text(item.price.toString()),
+                        ));
+                  }),
                   itemCount: catalogModel.items.length,
-                  itemBuilder: (context, index) {
-                    return ItemWidget(
-                      item: catalogModel.items[index],
-                    );
-                  },
                 )
               : Center(
                   child: CircularProgressIndicator(),
