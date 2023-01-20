@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shop_app/utils/routes.dart';
+import 'package:shop_app/widgets/theme.dart';
 
 void main(List<String> args) {
   runApp(loginPage());
@@ -91,7 +92,7 @@ class _loginPageState extends State<loginPage> {
                       height: 20,
                     ),
                     Material(
-                      color: Colors.blue,
+                      color: MyTheme.darkbluishcolor,
                       borderRadius:
                           BorderRadius.circular(changeButton ? 50 : 8),
                       child: InkWell(
