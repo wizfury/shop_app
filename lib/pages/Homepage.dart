@@ -61,10 +61,16 @@ class _HomepageState extends State<Homepage> {
                         child: GridTile(
                           header: Container(
                             padding: const EdgeInsets.all(10),
-                            decoration: BoxDecoration(),
-                            child: Text(item.name)),
+                            decoration: BoxDecoration(
+                              color: Colors.blue
+                            ),
+                            child: Text(item.name,style: TextStyle(color: Colors.white),)),
                           child: Image.network(item.image),
-                          footer: Text(item.price.toString()),
+                          footer: Container(
+                            padding: EdgeInsets.all(10),
+                            color: Colors.black,
+                            child: Center(
+                              child: Text("\$${item.price}",style: TextStyle(color: Colors.white),))),
                         ));
                   }),
                   itemCount: catalogModel.items.length,
