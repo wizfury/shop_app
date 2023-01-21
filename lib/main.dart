@@ -5,8 +5,13 @@ import 'package:shop_app/widgets/theme.dart';
 import 'pages/Homepage.dart';
 import 'pages/login_page.dart';
 import 'utils/routes.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 
-void main(List<String> args) {
+Future<void> main(List<String> args) async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+);
   runApp(MyApp());
 }
 
