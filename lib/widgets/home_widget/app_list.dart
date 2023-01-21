@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:shop_app/models/catalog.dart';
 import 'package:shop_app/pages/home_detail.dart';
+import 'package:shop_app/utils/routes.dart';
 import 'package:velocity_x/velocity_x.dart';
 import 'package:shop_app/widgets/home_widget/catalog_image.dart';
 
@@ -17,8 +18,11 @@ class AppList extends StatelessWidget {
       itemBuilder: ((context, index) {
         final catalog = catalogModel.items[index];
         return InkWell(
-          onTap: (() => Navigator.push(context, MaterialPageRoute(builder: (context)=> HomeDetailPage(catalog: catalog)))),
-          child: catalogItem(catalog: catalog));
+            onTap: (() => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => HomeDetailPage(catalog: catalog)))),
+            child: catalogItem(catalog: catalog));
       }),
       itemCount: catalogModel.items.length,
     );
@@ -39,9 +43,8 @@ class catalogItem extends StatelessWidget {
         child: Row(
       children: [
         Hero(
-          tag: Key(catalog.id.toString()),
-          child: catalogImage(image: catalog.image)
-          ),
+            tag: Key(catalog.id.toString()),
+            child: catalogImage(image: catalog.image)),
         Expanded(
             child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -58,7 +61,9 @@ class catalogItem extends StatelessWidget {
               children: [
                 "\$${catalog.price}".text.bold.xl.make(),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, MyRoutes.orderRoute);
+                  },
                   child: "Buy".text.make(),
                   style: ButtonStyle(
                       shape: MaterialStateProperty.all(StadiumBorder()),
