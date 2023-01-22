@@ -42,6 +42,7 @@ class _OrderPageState extends State<OrderPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: MyTheme.creamcolor,
       appBar: AppBar(
         iconTheme: IconThemeData(color: MyTheme.creamcolor),
         backgroundColor: MyTheme.darkbluishcolor,
