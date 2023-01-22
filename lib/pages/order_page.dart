@@ -1,3 +1,7 @@
+import 'dart:html';
+import 'dart:convert';
+import 'package:http/http.dart' as http;
+
 import 'package:flutter/material.dart';
 import 'package:shop_app/widgets/theme.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -9,13 +13,34 @@ class OrderPage extends StatefulWidget {
   State<OrderPage> createState() => _OrderPageState();
 }
 
+final nameController = TextEditingController();
+final emailController = TextEditingController();
+final addressController = TextEditingController();
+
+Future sendEmail() async {
+  final url = Uri.parse("https://api.emailjs.com/api/v1.0/email/send");
+  const service_id = "service_g3h0byh";
+  const template_id = "template_r9og8cj";
+  const user_id = "05gtatnW764-ZmYHK";
+  final response = await http.post(url,
+      headers: {'Content-Type': 'application/json'},
+      body: json.encode({
+        "service_id": service_id,
+        "template_id": template_id,
+        "user_id": user_id,
+        "template_params": {
+          "name": nameController.text,
+          "subject": "Order",
+          "address": addressController.text,
+          "email_id": emailController.text,
+        },
+      }));
+  return response.statusCode;
+}
+
 class _OrderPageState extends State<OrderPage> {
   @override
   Widget build(BuildContext context) {
-    final nameController = TextEditingController();
-    final emailController = TextEditingController();
-    final addressController = TextEditingController();
-
     return Scaffold(
       appBar: AppBar(
         iconTheme: IconThemeData(color: MyTheme.creamcolor),
@@ -60,9 +85,7 @@ class _OrderPageState extends State<OrderPage> {
                 SizedBox(height: 30),
                 ElevatedButton(
                   onPressed: () {
-                    print(nameController.text);
-                    print(emailController.text);
-                    print(addressController.text);
+                    sendEmail();
                   },
                   child: Text("Order"),
                 )
