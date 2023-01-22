@@ -44,14 +44,14 @@ class _OrderPageState extends State<OrderPage> {
                   ),
                 ),
                 TextFormField(
-                  controller: nameController,
+                  controller: emailController,
                   decoration: InputDecoration(
                     icon: Icon(Icons.email_outlined),
                     hintText: 'Email',
                   ),
                 ),
                 TextFormField(
-                  controller: nameController,
+                  controller: addressController,
                   decoration: InputDecoration(
                     icon: Icon(Icons.delivery_dining_outlined),
                     hintText: 'Delivery Address',
@@ -59,7 +59,11 @@ class _OrderPageState extends State<OrderPage> {
                 ),
                 SizedBox(height: 30),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    print(nameController.text);
+                    print(emailController.text);
+                    print(addressController.text);
+                  },
                   child: Text("Order"),
                 )
               ],
