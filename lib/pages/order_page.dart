@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 import 'package:flutter/material.dart';
+import 'package:shop_app/utils/routes.dart';
 import 'package:shop_app/widgets/theme.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -30,7 +31,8 @@ Future sendEmail() async {
         "user_id": user_id,
         "template_params": {
           "name": nameController.text,
-          "subject": "Order",
+          "subject": "Order Placed",
+          "order_type":"Cash on delivery",
           "address": addressController.text,
           "email_id": emailController.text,
         },
@@ -39,6 +41,7 @@ Future sendEmail() async {
 }
 
 class _OrderPageState extends State<OrderPage> {
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -87,6 +90,7 @@ class _OrderPageState extends State<OrderPage> {
                 ElevatedButton(
                   onPressed: () {
                     sendEmail();
+                    Navigator.pushNamed(context, MyRoutes.homeRoute);
                   },
                   child: Text("Order"),
                 )
