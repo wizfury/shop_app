@@ -1,6 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
-import 'dart:html';
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
@@ -19,7 +18,6 @@ import 'package:shop_app/widgets/home_widget/app_header.dart';
 
 import '../widgets/home_widget/app_list.dart';
 import 'package:cupertino_icons/cupertino_icons.dart';
-
 
 void main(List<String> args) {
   runApp(Homepage());
@@ -52,9 +50,8 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      drawer: Drawer(),
+      drawer: MyDrawer(),
       backgroundColor: MyTheme.creamcolor,
-    
       body: SafeArea(
         bottom: false,
         child: Container(
@@ -70,9 +67,7 @@ class _HomepageState extends State<Homepage> {
             ],
           ),
         ),
-        
-      ), 
+      ),
     );
   }
 }
-
