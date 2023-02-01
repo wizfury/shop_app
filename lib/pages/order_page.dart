@@ -51,53 +51,55 @@ class _OrderPageState extends State<OrderPage> {
         backgroundColor: MyTheme.darkbluishcolor,
         title: "Checkout".text.bold.xl.color(MyTheme.creamcolor).make(),
       ),
-      body: Column(
-        children: [
-          Container(
-            child: Image.asset("assets/images/order.png"),
-          ),
-          Container(
-            color: MyTheme.creamcolor,
-            child: Form(
-                child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                SizedBox(
-                  height: 30,
-                ),
-                TextFormField(
-                  controller: nameController,
-                  decoration: InputDecoration(
-                    icon: Icon(Icons.account_circle),
-                    hintText: 'Name',
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            Container(
+              child: Image.asset("assets/images/order.png"),
+            ),
+            Container(
+              color: MyTheme.creamcolor,
+              child: Form(
+                  child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 30,
                   ),
-                ),
-                TextFormField(
-                  controller: emailController,
-                  decoration: InputDecoration(
-                    icon: Icon(Icons.email_outlined),
-                    hintText: 'Email',
+                  TextFormField(
+                    controller: nameController,
+                    decoration: InputDecoration(
+                      icon: Icon(Icons.account_circle),
+                      hintText: 'Name',
+                    ),
                   ),
-                ),
-                TextFormField(
-                  controller: addressController,
-                  decoration: InputDecoration(
-                    icon: Icon(Icons.delivery_dining_outlined),
-                    hintText: 'Delivery Address',
+                  TextFormField(
+                    controller: emailController,
+                    decoration: InputDecoration(
+                      icon: Icon(Icons.email_outlined),
+                      hintText: 'Email',
+                    ),
                   ),
-                ),
-                SizedBox(height: 30),
-                ElevatedButton(
-                  onPressed: () {
-                    sendEmail();
-                    Navigator.pushNamed(context, MyRoutes.homeRoute);
-                  },
-                  child: Text("Order"),
-                )
-              ],
-            ).centered()),
-          ),
-        ],
+                  TextFormField(
+                    controller: addressController,
+                    decoration: InputDecoration(
+                      icon: Icon(Icons.delivery_dining_outlined),
+                      hintText: 'Delivery Address',
+                    ),
+                  ),
+                  SizedBox(height: 30),
+                  ElevatedButton(
+                    onPressed: () {
+                      sendEmail();
+                      Navigator.pushNamed(context, MyRoutes.homeRoute);
+                    },
+                    child: Text("Order"),
+                  )
+                ],
+              ).centered()),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -8,10 +8,8 @@ import 'utils/routes.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 
-Future<void> main(List<String> args) async {
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-);
+void main(List<String> args) {
+  
   runApp(MyApp());
 }
 
