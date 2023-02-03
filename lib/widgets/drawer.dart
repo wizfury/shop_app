@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:matcher/matcher.dart';
 import 'package:shop_app/widgets/theme.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
@@ -14,6 +15,7 @@ class MyDrawer extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
+            DrawerHeader(decoration: BoxDecoration(),child:"Shop App".text.xl5.bold.color(MyTheme.darkbluishcolor).center.make(),),
             ListTile(
               leading: Icon(
                 CupertinoIcons.home,
