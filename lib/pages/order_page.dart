@@ -1,11 +1,14 @@
-
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
-import 'package:http/http.dart' as http;
+import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:shop_app/models/catalog.dart';
+import 'package:velocity_x/velocity_x.dart';
+
 import 'package:shop_app/utils/routes.dart';
 import 'package:shop_app/widgets/theme.dart';
-import 'package:velocity_x/velocity_x.dart';
 
 class OrderPage extends StatefulWidget {
   const OrderPage({super.key});
@@ -17,6 +20,8 @@ class OrderPage extends StatefulWidget {
 final nameController = TextEditingController();
 final emailController = TextEditingController();
 final addressController = TextEditingController();
+String title = '';
+int price = 0;
 
 Future sendEmail() async {
   final url = Uri.parse("https://api.emailjs.com/api/v1.0/email/send");
@@ -32,18 +37,31 @@ Future sendEmail() async {
         "template_params": {
           "name": nameController.text,
           "subject": "Order Placed",
-          "order_type":"Cash on delivery",
+          "order_type": "Cash on delivery",
           "address": addressController.text,
           "email_id": emailController.text,
+          "item" : title,
+          "price": price,
         },
       }));
   return response.statusCode;
 }
 
 class _OrderPageState extends State<OrderPage> {
-  
   @override
   Widget build(BuildContext context) {
+    
+
+    
+      final arguments =
+          ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
+      title = arguments['item'] as String;
+      price = arguments['price'] as int;
+    
+
+    print(title);
+    print(price);
+
     return Scaffold(
       backgroundColor: MyTheme.creamcolor,
       appBar: AppBar(

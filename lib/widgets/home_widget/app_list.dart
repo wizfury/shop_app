@@ -62,7 +62,12 @@ class catalogItem extends StatelessWidget {
                 "\$${catalog.price}".text.bold.xl.make(),
                 ElevatedButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, MyRoutes.orderRoute);
+                    Navigator.pushNamed(context, MyRoutes.orderRoute,
+                    arguments:{
+                      'item':catalog.name,
+                      'price':catalog.price,
+                      }
+                      );
                   },
                   child: "Buy".text.make(),
                   style: ButtonStyle(
