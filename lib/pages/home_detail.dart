@@ -20,7 +20,7 @@ class HomeDetailPage extends StatelessWidget {
           "\$${catalog.price}".text.color(Colors.red).bold.xl2.make(),
           ElevatedButton(
             onPressed: () {
-              Navigator.pushNamed(context, MyRoutes.orderRoute,arguments:{
+              Navigator.pushNamed(context, MyRoutes.orderRoute, arguments: {
                 'item': catalog.name,
                 'price': catalog.price,
               });

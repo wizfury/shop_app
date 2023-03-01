@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:shop_app/pages/cartpage.dart';
 import 'package:shop_app/pages/order_page.dart';
 import 'package:shop_app/widgets/theme.dart';
 import 'pages/Homepage.dart';
@@ -27,6 +28,7 @@ class MyApp extends StatelessWidget {
         MyRoutes.homeRoute: (context) => Homepage(),
         MyRoutes.loginRoute: (context) => loginPage(),
         MyRoutes.orderRoute:(context) => OrderPage(),
+        MyRoutes.cartRoute:(context) => cartPage(),
       },
       
     );

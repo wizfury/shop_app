@@ -2,7 +2,7 @@ class Item {
   final String id;
   final String name;
   final String desc;
-  final int price;
+  final double price;
   final String color;
   final String image;
 
