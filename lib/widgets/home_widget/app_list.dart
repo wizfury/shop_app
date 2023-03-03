@@ -16,12 +16,12 @@ class AppList extends StatelessWidget {
     return ListView.builder(
       shrinkWrap: true,
       itemBuilder: ((context, index) {
-        final catalog = catalogModel.items[index];
+        final catalog = catalogModel.getByPosition(index);
         return InkWell(
             onTap: (() => Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => HomeDetailPage(catalog: catalog)))),
+                    builder: (context) => HomeDetailPage(catalog: catalogModel.getById(index))))),
             child: catalogItem(catalog: catalog));
       }),
       itemCount: catalogModel.items.length,
