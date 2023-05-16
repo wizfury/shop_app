@@ -21,7 +21,7 @@ class AppList extends StatelessWidget {
             onTap: (() => Navigator.push(
                 context,
                 MaterialPageRoute(
-                    builder: (context) => HomeDetailPage(catalog: catalogModel.getById(index))))),
+                    builder: (context) => HomeDetailPage(catalog: catalog)))),
             child: catalogItem(catalog: catalog));
       }),
       itemCount: catalogModel.items.length,

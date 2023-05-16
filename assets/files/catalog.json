@@ -40,30 +40,6 @@
       "price": 449.99,
       "color": "black",
       "image": "https://s7d1.scene7.com/is/image/canon/2727C002_eos-rebel-t7-ef-s-18-55mm-is-ii-kit_2?fmt=webp-alpha&wid=800"
-    },
-    {
-      "id": "006",
-      "name": "Samsung Galaxy S21 Ultra",
-      "desc": "6.8-inch Dynamic AMOLED 2X display, Exynos 2100 chip, Quad camera system",
-      "price": 1199.99,
-      "color": "Phantom Black",
-      "image": ""
-    },
-    {
-      "id": "007",
-      "name": "Sony PlayStation 5",
-      "desc": "Ultra-high-speed SSD, Integrated I/O, Ray tracing",
-      "price": 499.99,
-      "color": "White",
-      "image": ""
-    },
-    {
-      "id": "p004",
-      "name": "Bose QuietComfort 35 II Wireless Headphones",
-      "desc": "Noise cancelling headphones with Alexa voice control",
-      "price": 299.00,
-      "color": "Black",
-      "image": ""
     }
     
     ]
