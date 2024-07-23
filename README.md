@@ -1,16 +1,15 @@
-# shop_app
+# Shop App
 
-A new Flutter project.
+An e-commerce web application using the Flutter framework, enhancing customer experience by
+enabling direct product purchases from the app.
 
-## Getting Started
+Features an automated email notification system and scalable order data management utilizing
+Firebase Storage and Firestore Database for efficient communication of order details.
 
-This project is a starting point for a Flutter application.
+Tools: Flutter, Firebase Storage, Firestore Database, Dart
 
-A few resources to get you started if this is your first Flutter project:
+# Demo
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+https://github.com/user-attachments/assets/e9b67e54-79b0-4913-a87d-f0f2efda9a92
+
